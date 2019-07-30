@@ -57,15 +57,10 @@ body, html {
 
 /* Position text in the middle of the page/image */
 .bg-text {
-    font-weight: bold;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 80%;
-    padding: 20px;
-    text-align: center;
+   font-weight: bold;
+
+   z-index: 2;
+   text-align: center;
 }
 
 
