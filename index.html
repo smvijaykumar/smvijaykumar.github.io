@@ -112,15 +112,15 @@ var prev ;
 
     var y = d3.scale.linear()
     // .rangeRound([height - margin.top - margin.bottom, 0])
-        .range([height, 0]);
+        .range([height-40, 0]);
 
     var color = d3.scale.category10();
 
     var xAxis = d3.svg.axis()
         .scale(x)
         .ticks(12)
-        .innerTickSize(15)
-        .outerTickSize(0)
+        //.innerTickSize(15)
+        //.outerTickSize(0)
         .orient("bottom");
 
     var yAxis = d3.svg.axis()
@@ -203,8 +203,8 @@ var prev ;
         var annotations = [
             {
                 "cx": 400,
-                "cy": 291,
-                "r": 69,
+                "cy": 250,
+                "r": 60,
                 "text": "Team Chennai and Rajasthan suspended during this period",
                 "textWidth": 70,
                 "textOffset": [
@@ -254,6 +254,7 @@ var prev ;
             .attr("transform", function(d,i) { return "translate(" + path[0][i].getPointAtLength(path[0][i].getTotalLength()).x + "," + path[0][i].getPointAtLength(path[0][i].getTotalLength()).y + ")"; })
             .attr("x", 3)
             .attr("dy", ".35em")
+            .style("opacity",0)
             .text(function(d) { return d.name; });
 
 
@@ -292,6 +293,7 @@ var prev ;
             .attr("stroke-dashoffset", 0)
             .each("end",function () {
                 d3.select("g.annotations").style("display", null);
+                d3.selectAll("text").style("opacity",1);
             });
 
 
